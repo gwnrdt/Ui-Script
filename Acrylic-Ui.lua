@@ -4,7 +4,7 @@
 local Library = {
 	Version = 'Acrylic.0.6',
 	Loaded = true,
-	Discord = 'discord.gg/wPaQZwhMHy',
+	Discord = '',
 	env = getgenv or getfenv,
 	Executor = {"s","w","z","t","a","c"},
 	Skid = true,
