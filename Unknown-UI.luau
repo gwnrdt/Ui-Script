@@ -1016,7 +1016,7 @@ function Env:Window(meta)
 					ImageLabel_1.BorderSizePixel = 0
 					ImageLabel_1.Position = UDim2.new(0.5, 0,0.5, 0)
 					ImageLabel_1.Size = UDim2.new(1, 50,1, 0)
-					ImageLabel_1.Image = "rbxassetid://72380279434385"
+					ImageLabel_1.Image = "rbxassetid://106470733807891"
 					ImageLabel_1.ImageTransparency = 0.8999999761581421
 					ImageLabel_1.ScaleType = Enum.ScaleType.Crop
 
