@@ -168,7 +168,7 @@ Khaw.ZIndexBehavior = Enum.ZIndexBehavior.Global
 function Env:Window(meta)
 	local Title = meta.Title or "Title"
 	local Desc = meta.Desc or "Desc"
-	local Logo = meta.Logo or 128185233852701
+	local Logo = meta.Logo or 106470733807891
 
 	local Background_1 = Instance.new("Frame")
 	local DropShadow_1 = Instance.new("ImageLabel")
@@ -219,7 +219,7 @@ function Env:Window(meta)
 	Effect_1.BorderSizePixel = 0
 	Effect_1.Position = UDim2.new(0.5, 0,0.5, 0)
 	Effect_1.Size = UDim2.new(1, 0,1, 0)
-	Effect_1.Image = "rbxassetid://106470733807891"
+	Effect_1.Image = "rbxassetid://132687652275989"
 	Effect_1.ImageColor3 = Color3.fromRGB(0,255,127)
 	Effect_1.ImageTransparency = 0.1
 	Effect_1.ScaleType = Enum.ScaleType.Crop
