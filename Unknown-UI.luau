@@ -168,7 +168,7 @@ Khaw.ZIndexBehavior = Enum.ZIndexBehavior.Global
 function Env:Window(meta)
 	local Title = meta.Title or "Title"
 	local Desc = meta.Desc or "Desc"
-	local Logo = meta.Logo or 106470733807891
+	local Logo = meta.Logo or 128185233852701
 
 	local Background_1 = Instance.new("Frame")
 	local DropShadow_1 = Instance.new("ImageLabel")
@@ -1061,7 +1061,7 @@ function Env:Window(meta)
 					next_1.BorderSizePixel = 0
 					next_1.Position = UDim2.new(0, 245,0.5, 0)
 					next_1.Size = UDim2.new(0, 20,0, 20)
-					next_1.Image = "rbxassetid://108028847031522"
+					next_1.Image = "rbxassetid://106470733807891"
 					next_1.ScaleType = Enum.ScaleType.Crop
 
 					ClickButton.MouseButton1Click:Connect(function()
