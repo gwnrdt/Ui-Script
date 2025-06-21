@@ -204,7 +204,7 @@ function Env:Window(meta)
 	DropShadow_1.Position = UDim2.new(0.5, 0,0.5, 0)
 	DropShadow_1.Size = UDim2.new(1, 120,1, 120)
 	DropShadow_1.ZIndex = 0
-	DropShadow_1.Image = "rbxassetid://106470733807891"
+	DropShadow_1.Image = "rbxassetid://8992230677"
 	DropShadow_1.ImageColor3 = Color3.fromRGB(0,0,0)
 	DropShadow_1.ImageTransparency = 0.30000001192092896
 	DropShadow_1.ScaleType = Enum.ScaleType.Slice
@@ -219,7 +219,7 @@ function Env:Window(meta)
 	Effect_1.BorderSizePixel = 0
 	Effect_1.Position = UDim2.new(0.5, 0,0.5, 0)
 	Effect_1.Size = UDim2.new(1, 0,1, 0)
-	Effect_1.Image = "rbxassetid://132687652275989"
+	Effect_1.Image = "rbxassetid://106470733807891"
 	Effect_1.ImageColor3 = Color3.fromRGB(0,255,127)
 	Effect_1.ImageTransparency = 0.1
 	Effect_1.ScaleType = Enum.ScaleType.Crop
