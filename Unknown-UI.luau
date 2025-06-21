@@ -1266,7 +1266,7 @@ function Env:Window(meta)
 				icon_1.BorderSizePixel = 0
 				icon_1.Position = UDim2.new(0, 35,0.5, 0)
 				icon_1.Size = UDim2.new(0, 40,0, 40)
-				icon_1.Image = "rbxassetid://94937742565147"
+				icon_1.Image = "rbxassetid://330662797641976479"
 				icon_1.ScaleType = Enum.ScaleType.Crop
 
 				Desc_1.Name = "Desc"
