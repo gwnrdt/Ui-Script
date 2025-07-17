@@ -228,7 +228,7 @@ function Env.new(meta)
 	local UIListLayout_1 = Instance.new("UIListLayout")
 
 	Notification.Name = "Notification"
-	Notification.Parent = fetching
+	Notification.Parent = Mscuaz
 	Notification.AnchorPoint = Vector2.new(1, 1)
 	Notification.BackgroundColor3 = Color3.fromRGB(255,255,255)
 	Notification.BackgroundTransparency = 1
@@ -449,7 +449,7 @@ function Env.new(meta)
 			local UICorner_4 = Instance.new("UICorner")
 
 			Key.Name = "Key"
-			Key.Parent = fetching
+			Key.Parent = Mscuaz
 			Key.AnchorPoint = Vector2.new(0.5, 0.5)
 			Key.BackgroundColor3 = Color3.fromRGB(19,19,19)
 			Key.BorderColor3 = Color3.fromRGB(0,0,0)
@@ -506,7 +506,7 @@ function Env.new(meta)
 			TitleHeader_1.Size = UDim2.new(0, 0,0, 0)
 			TitleHeader_1.Font = Enum.Font.GothamSemibold
 			TitleHeader_1.RichText = true
-			TitleHeader_1.Text = "Fetching's script"
+			TitleHeader_1.Text = "Mscuaz Script"
 			TitleHeader_1.TextColor3 = Color3.fromRGB(255,255,255)
 			TitleHeader_1.TextSize = 15
 			TitleHeader_1.TextXAlignment = Enum.TextXAlignment.Left
@@ -527,7 +527,7 @@ function Env.new(meta)
 			DescHeader_1.Size = UDim2.new(0, 0,0, 0)
 			DescHeader_1.Font = Enum.Font.GothamMedium
 			DescHeader_1.RichText = true
-			DescHeader_1.Text = "by @96soul"
+			DescHeader_1.Text = "By Mscuaz"
 			DescHeader_1.TextColor3 = Color3.fromRGB(255,255,255)
 			DescHeader_1.TextSize = 10
 			DescHeader_1.TextTransparency = 0.5
