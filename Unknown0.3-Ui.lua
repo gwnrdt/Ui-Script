@@ -228,7 +228,7 @@ function Env.new(meta)
 	local UIListLayout_1 = Instance.new("UIListLayout")
 
 	Notification.Name = "Notification"
-	Notification.Parent = Mscuaz
+	Notification.Parent = fetching
 	Notification.AnchorPoint = Vector2.new(1, 1)
 	Notification.BackgroundColor3 = Color3.fromRGB(255,255,255)
 	Notification.BackgroundTransparency = 1
@@ -449,7 +449,7 @@ function Env.new(meta)
 			local UICorner_4 = Instance.new("UICorner")
 
 			Key.Name = "Key"
-			Key.Parent = Mscuaz
+			Key.Parent = fetching
 			Key.AnchorPoint = Vector2.new(0.5, 0.5)
 			Key.BackgroundColor3 = Color3.fromRGB(19,19,19)
 			Key.BorderColor3 = Color3.fromRGB(0,0,0)
