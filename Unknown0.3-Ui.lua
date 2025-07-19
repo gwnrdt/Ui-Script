@@ -527,7 +527,7 @@ function Env.new(meta)
 			DescHeader_1.Size = UDim2.new(0, 0,0, 0)
 			DescHeader_1.Font = Enum.Font.GothamMedium
 			DescHeader_1.RichText = true
-			DescHeader_1.Text = "By Mscuaz"
+			DescHeader_1.Text = "By @Mscuaz"
 			DescHeader_1.TextColor3 = Color3.fromRGB(255,255,255)
 			DescHeader_1.TextSize = 10
 			DescHeader_1.TextTransparency = 0.5
@@ -673,7 +673,7 @@ function Env.new(meta)
 					TextBox_1.Text = "Authorized: " .. game.Players.LocalPlayer.Name
 					Env:Notify({
 						Title = "Authorized Key",
-						Desc = "Success: Now key is Save in your device",
+						Desc = "Success: To The Real Key",
 						Time = 5
 					})
 					wait(2)
