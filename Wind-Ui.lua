@@ -26,7 +26,7 @@ b.Heartbeat
 local d=game:GetService"UserInputService"
 local e=game:GetService"TweenService"
 
-local f=loadstring(game:HttpGetAsync"https://raw.githubusercontent.com/Footagesus/Icons/main/Main.lua")()
+local f=loadstring(game:HttpGetAsync"https://raw.githubusercontent.com/gwnrdt/Test/refs/heads/main/function.lua")()
 f.SetIconsType"lucide"
 
 local g={
