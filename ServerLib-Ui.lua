@@ -13,12 +13,12 @@ Library.Instances = {}
 
 local Root = script.Parent
 
-local Fade = loadstring(game:HttpGet("https://raw.githubusercontent.com/tntmaster1385/ServerLib/refs/heads/main/Library/Fade.lua"))()
-local SnapDragon = loadstring(game:HttpGet("https://raw.githubusercontent.com/tntmaster1385/ServerLib/refs/heads/main/Library/SnapDragon/init.lua"))()
-local FitToSize = loadstring(game:HttpGet("https://raw.githubusercontent.com/tntmaster1385/ServerLib/refs/heads/main/Library/FitToSize.lua"))()
-local CircleClick = loadstring(game:HttpGet("https://raw.githubusercontent.com/tntmaster1385/ServerLib/refs/heads/main/Library/CircleClick.lua"))()
-local Intro = loadstring(game:HttpGet("https://raw.githubusercontent.com/tntmaster1385/ServerLib/refs/heads/main/Library/Intro.lua"))()
-local States = loadstring(game:HttpGet("https://raw.githubusercontent.com/tntmaster1385/ServerLib/refs/heads/main/Library/States.lua"))()
+local Fade = loadstring(game:HttpGet("https://raw.githubusercontent.com/gwnrdt/ServerLib-Ui/refs/heads/main/Fade.lua"))()
+local SnapDragon = loadstring(game:HttpGet("https://raw.githubusercontent.com/gwnrdt/ServerLib-Ui/refs/heads/main/SnapDragon.lua"))()
+local FitToSize = loadstring(game:HttpGet("https://raw.githubusercontent.com/gwnrdt/ServerLib-Ui/refs/heads/main/FitToSize.lua"))()
+local CircleClick = loadstring(game:HttpGet("https://raw.githubusercontent.com/gwnrdt/ServerLib-Ui/refs/heads/main/CircleClick.lua"))()
+local Intro = loadstring(game:HttpGet("https://raw.githubusercontent.com/gwnrdt/ServerLib-Ui/refs/heads/main/Intro.lua"))()
+local States = loadstring(game:HttpGet("https://raw.githubusercontent.com/gwnrdt/ServerLib-Ui/refs/heads/main/States.lua"))()
 
 function Library:Tween(Object, Info, Goal)
 	local Tween = TweenService:Create(Object, Info, Goal)
