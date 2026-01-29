@@ -1,6 +1,6 @@
 --[[
                 Optical Liquid v5
-  Noint.lol User Interface Made by Miki
+  Noint Ui User Interface Made by Miki
   Obfuscator: Luraph Obfuscator v14.5.1
 ]]
 
