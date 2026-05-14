@@ -334,7 +334,7 @@ function Env:Window(meta)
 				d = "Out",
 				g = {Size = UDim2.new(0, 35, 0, 35)}
 			}):Play()
-			task.wait(0.016) 
+			task.wait(0.016)
 			tw({
 				v = ImageLabel,
 				t = 0.2,
@@ -571,6 +571,7 @@ function Env:Window(meta)
 		local Title = meta.Title
 		local Desc = meta.Desc
 		local Banner = meta.Banner
+		local Columns = meta.Columns or 2
 
 		Addtab_1.Name = "Addtab"
 		Addtab_1.Parent = ScrollingFrame_1
@@ -681,6 +682,47 @@ function Env:Window(meta)
 		UIListLayout_6:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
 			Right_1.CanvasSize = UDim2.new(0, 0, 0, UIListLayout_6.AbsoluteContentSize.Y + 20)
 		end)
+
+		local Center_1 = Instance.new("ScrollingFrame")
+		local UIListLayout_7 = Instance.new("UIListLayout")
+
+		Center_1.Name = "Center"
+		Center_1.Parent = Pages_1
+		Center_1.Active = true
+		Center_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+		Center_1.BackgroundTransparency = 1
+		Center_1.BorderColor3 = Color3.fromRGB(0,0,0)
+		Center_1.BorderSizePixel = 0
+		Center_1.Size = UDim2.new(1, 0,1, 0)
+		Center_1.ClipsDescendants = true
+		Center_1.AutomaticCanvasSize = Enum.AutomaticSize.None
+		Center_1.BottomImage = "rbxasset://textures/ui/Scroll/scroll-bottom.png"
+		Center_1.CanvasPosition = Vector2.new(0, 0)
+		Center_1.ElasticBehavior = Enum.ElasticBehavior.WhenScrollable
+		Center_1.HorizontalScrollBarInset = Enum.ScrollBarInset.None
+		Center_1.MidImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+		Center_1.ScrollBarImageColor3 = Color3.fromRGB(0,0,0)
+		Center_1.ScrollBarImageTransparency = 1
+		Center_1.ScrollBarThickness = 0
+		Center_1.ScrollingDirection = Enum.ScrollingDirection.XY
+		Center_1.TopImage = "rbxasset://textures/ui/Scroll/scroll-top.png"
+		Center_1.VerticalScrollBarInset = Enum.ScrollBarInset.None
+		Center_1.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Right
+		Center_1.Visible = false
+
+		UIListLayout_7.Parent = Center_1
+		UIListLayout_7.Padding = UDim.new(0,7)
+		UIListLayout_7.SortOrder = Enum.SortOrder.LayoutOrder
+
+		UIListLayout_7:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+			Center_1.CanvasSize = UDim2.new(0, 0, 0, UIListLayout_7.AbsoluteContentSize.Y + 20)
+		end)
+
+		if Columns == 1 then
+			Left_1.Visible = false
+			Right_1.Visible = false
+			Center_1.Visible = true
+		end
 
 		ClickTab.MouseButton1Click:Connect(function()
 			Header_1.Position = UDim2.new(0, -30,0, 0)
@@ -796,6 +838,9 @@ function Env:Window(meta)
 		end)
 
 		local function GetSide(side)
+			if Columns == 1 then
+				return Center_1
+			end
 			if not side then
 				return Left_1
 			end
@@ -991,13 +1036,13 @@ function Env:Window(meta)
 
 					Title_1.Name = "Title"
 					Title_1.Parent = ButtonImage
-					Title_1.AnchorPoint = Vector2.new(0.5, 0.5)
+					Title_1.AnchorPoint = Vector2.new(0, 0.5)
 					Title_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
 					Title_1.BackgroundTransparency = 1
 					Title_1.BorderColor3 = Color3.fromRGB(0,0,0)
 					Title_1.BorderSizePixel = 0
-					Title_1.Position = UDim2.new(0.575679302, 0,0.368333131, 0)
-					Title_1.Size = UDim2.new(0.775981307, 0,0.0700000003, 20)
+					Title_1.Position = UDim2.new(0, 58, 0.368333131, 0)
+					Title_1.Size = UDim2.new(1, -88, 0, 20)
 					Title_1.Font = Enum.Font.GothamBold
 					Title_1.RichText = true
 					Title_1.Text = Title
@@ -1037,13 +1082,13 @@ function Env:Window(meta)
 
 					Desc_1.Name = "Desc"
 					Desc_1.Parent = ButtonImage
-					Desc_1.AnchorPoint = Vector2.new(0.5, 0.5)
+					Desc_1.AnchorPoint = Vector2.new(0, 0.5)
 					Desc_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
 					Desc_1.BackgroundTransparency = 1
 					Desc_1.BorderColor3 = Color3.fromRGB(0,0,0)
 					Desc_1.BorderSizePixel = 0
-					Desc_1.Position = UDim2.new(0.575679302, 0,0.664999783, 0)
-					Desc_1.Size = UDim2.new(0.775981307, 0,-0.0366666801, 20)
+					Desc_1.Position = UDim2.new(0, 58, 0.664999783, 0)
+					Desc_1.Size = UDim2.new(1, -88, 0, 20)
 					Desc_1.Font = Enum.Font.GothamBold
 					Desc_1.RichText = true
 					Desc_1.Text = Desc
@@ -1054,12 +1099,12 @@ function Env:Window(meta)
 
 					next_1.Name = "next"
 					next_1.Parent = ButtonImage
-					next_1.AnchorPoint = Vector2.new(0.5, 0.5)
+					next_1.AnchorPoint = Vector2.new(1, 0.5)
 					next_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
 					next_1.BackgroundTransparency = 1
 					next_1.BorderColor3 = Color3.fromRGB(0,0,0)
 					next_1.BorderSizePixel = 0
-					next_1.Position = UDim2.new(0, 245,0.5, 0)
+					next_1.Position = UDim2.new(1, -12, 0.5, 0)
 					next_1.Size = UDim2.new(0, 20,0, 20)
 					next_1.Image = "rbxassetid://108028847031522"
 					next_1.ScaleType = Enum.ScaleType.Crop
@@ -1071,7 +1116,7 @@ function Env:Window(meta)
 							t = 0.15,
 							s = "Bounce",
 							d = "Out",
-							g = {Position = UDim2.new(0, 252,0.5, 0)}
+							g = {Position = UDim2.new(1, -5, 0.5, 0)}
 						}):Play()
 						delay(0.06, function()
 							tw({
@@ -1079,7 +1124,7 @@ function Env:Window(meta)
 								t = 0.15,
 								s = "Bounce",
 								d = "Out",
-								g = {Position = UDim2.new(0, 245,0.5, 0)}
+								g = {Position = UDim2.new(1, -12, 0.5, 0)}
 							}):Play()
 						end)
 						EffectClick2(ClickButton, ButtonImage)
@@ -1226,13 +1271,13 @@ function Env:Window(meta)
 
 				Title_1.Name = "Title"
 				Title_1.Parent = Discord
-				Title_1.AnchorPoint = Vector2.new(0.5, 0.5)
+				Title_1.AnchorPoint = Vector2.new(0, 0.5)
 				Title_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
 				Title_1.BackgroundTransparency = 1
 				Title_1.BorderColor3 = Color3.fromRGB(0,0,0)
 				Title_1.BorderSizePixel = 0
-				Title_1.Position = UDim2.new(0.611293197, 0,0.408333331, 0)
-				Title_1.Size = UDim2.new(0.704753578, 0,0.150000006, 20)
+				Title_1.Position = UDim2.new(0, 70,0.35, 0)
+				Title_1.Size = UDim2.new(1, -80,0, 20)
 				Title_1.Font = Enum.Font.GothamBold
 				Title_1.Text = "Discord"
 				Title_1.TextColor3 = Color3.fromRGB(255,255,255)
@@ -1271,13 +1316,13 @@ function Env:Window(meta)
 
 				Desc_1.Name = "Desc"
 				Desc_1.Parent = Discord
-				Desc_1.AnchorPoint = Vector2.new(0.5, 0.5)
+				Desc_1.AnchorPoint = Vector2.new(0, 0.5)
 				Desc_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
 				Desc_1.BackgroundTransparency = 1
 				Desc_1.BorderColor3 = Color3.fromRGB(0,0,0)
 				Desc_1.BorderSizePixel = 0
-				Desc_1.Position = UDim2.new(0.611293197, 0,0.675000012, 0)
-				Desc_1.Size = UDim2.new(0.704753578, 0,-0.0166666675, 20)
+				Desc_1.Position = UDim2.new(0, 70,0.65, 0)
+				Desc_1.Size = UDim2.new(1, -80,0, 20)
 				Desc_1.Font = Enum.Font.GothamBold
 				Desc_1.Text = Link
 				Desc_1.TextColor3 = Color3.fromRGB(255,255,255)
@@ -1329,13 +1374,13 @@ function Env:Window(meta)
 					end)
 				end)
 			end
-			
+
 			function Env._Class:Icon(meta)
-				
+
 				local Icon = meta.Icon
 				local Title = meta.Title
 				local Desc = meta.Desc
-				
+
 				local ToggleImage = Instance.new("Frame")
 				local Title_1 = Instance.new("TextLabel")
 				local UICorner_1 = Instance.new("UICorner")
@@ -1416,7 +1461,7 @@ function Env:Window(meta)
 				Desc_1.TextSize = 10
 				Desc_1.TextTransparency = 0.5
 				Desc_1.TextXAlignment = Enum.TextXAlignment.Left
-				
+
 			end
 
 			function Env._Class:Toggle(meta)
@@ -1518,11 +1563,11 @@ function Env:Window(meta)
 
 					Check_1.Name = "Check"
 					Check_1.Parent = ToggleImage
-					Check_1.AnchorPoint = Vector2.new(0.5, 0.5)
+					Check_1.AnchorPoint = Vector2.new(1, 0.5)
 					Check_1.BackgroundColor3 = Color3.fromRGB(42,42,42)
 					Check_1.BorderColor3 = Color3.fromRGB(0,0,0)
 					Check_1.BorderSizePixel = 0
-					Check_1.Position = UDim2.new(0.899999976, 0,0.5, 0)
+					Check_1.Position = UDim2.new(1, -10, 0.5, 0)
 					Check_1.Size = UDim2.new(0, 25,0, 25)
 					Check_1.ClipsDescendants = true
 
@@ -1555,7 +1600,7 @@ function Env:Window(meta)
 					UICorner_3.Parent = Check_1
 
 					local function Toggle(Value)
-						if not Value then 
+						if not Value then
 							Callback(Value)
 							tw({
 								v = ColorFrame_1,
@@ -1578,7 +1623,7 @@ function Env:Window(meta)
 								d = "Out",
 								g = {TextTransparency = 0.5}
 							}):Play()
-						elseif Value then 
+						elseif Value then
 							Callback(Value)
 							tw({
 								v = ColorFrame_1,
@@ -1708,11 +1753,11 @@ function Env:Window(meta)
 
 					Check_1.Name = "Check"
 					Check_1.Parent = Togglez
-					Check_1.AnchorPoint = Vector2.new(0.5, 0.5)
+					Check_1.AnchorPoint = Vector2.new(1, 0.5)
 					Check_1.BackgroundColor3 = Color3.fromRGB(42,42,42)
 					Check_1.BorderColor3 = Color3.fromRGB(0,0,0)
 					Check_1.BorderSizePixel = 0
-					Check_1.Position = UDim2.new(0.899999976, 0,0.5, 0)
+					Check_1.Position = UDim2.new(1, -10, 0.5, 0)
 					Check_1.Size = UDim2.new(0, 25,0, 25)
 					Check_1.ClipsDescendants = true
 
@@ -1763,7 +1808,7 @@ function Env:Window(meta)
 
 
 					local function Toggle(Value)
-						if not Value then 
+						if not Value then
 							Callback(Value)
 							tw({
 								v = ColorFrame_1,
@@ -1786,7 +1831,7 @@ function Env:Window(meta)
 								d = "Out",
 								g = {TextTransparency = 0.5}
 							}):Play()
-						elseif Value then 
+						elseif Value then
 							Callback(Value)
 							tw({
 								v = Title_1,
@@ -1849,7 +1894,7 @@ function Env:Window(meta)
 					end
 
 					return Index
-				end 
+				end
 			end
 
 			function Env._Class:Paragarp(meta)
@@ -1950,20 +1995,20 @@ function Env:Window(meta)
 				local descHeight = Desc_1.TextBounds.Y + 5
 				Desc_1.Size = UDim2.new(0.927587509, 0, 0, descHeight)
 				Paragarp.Size = UDim2.new(0.97, 0, 0, descHeight + 25)
-				
+
 				local Index = {}
-				
+
 				function Index:Title(v)
 					Title_1.Text = v
 				end
-				
+
 				function Index:Desc(v)
 					Desc_1.Text = v
 					local descHeight = Desc_1.TextBounds.Y + 5
 					Desc_1.Size = UDim2.new(0.927587509, 0, 0, descHeight)
 					Paragarp.Size = UDim2.new(0.97, 0, 0, descHeight + 35)
 				end
-				
+
 				function Index:Visible(v)
 					Paragarp.Visible = v
 				end
@@ -1972,12 +2017,12 @@ function Env:Window(meta)
 			end
 
 			function Env._Class:Textbox(meta)
-				
+
 				local Value = meta.Value or "Example"
 				local PlaceHolder = meta.PlaceHolder or "Place"
 				local ClearOnFocus = meta.ClearOnFocus or false
 				local Callback = meta.Callback
-				
+
 				local Textbox = Instance.new("Frame")
 				local UICorner_1 = Instance.new("UICorner")
 				local ImageLabel_1 = Instance.new("ImageLabel")
@@ -2064,7 +2109,7 @@ function Env:Window(meta)
 						g = {Transparency = 0.5}
 					}):Play()
 				end)
-				
+
 				Edit_1.Focused:Connect(function()
 					tw({
 						v = UIStroke_1,
@@ -2074,7 +2119,7 @@ function Env:Window(meta)
 						g = {Transparency = 0}
 					}):Play()
 				end)
-				
+
 				local Index = {}
 
 				function Index:Value(v)
@@ -2097,7 +2142,7 @@ function Env:Window(meta)
 				local Rounding = info.Rounding or 0
 				local Value = info.Value or Min
 				local Callback = info.CallBack or function() end
-			
+
 				local Slider = Instance.new("Frame")
 				local UICorner_1 = Instance.new("UICorner")
 				local ImageLabel_1 = Instance.new("ImageLabel")
@@ -2162,7 +2207,7 @@ function Env:Window(meta)
 				Bar_1.BorderColor3 = Color3.fromRGB(0,0,0)
 				Bar_1.BorderSizePixel = 0
 				Bar_1.Position = UDim2.new(0.5, 0,0.649999976, 0)
-				Bar_1.Size = UDim2.new(0, 253,0, 20)
+				Bar_1.Size = UDim2.new(0.88, 0,0, 20)
 				Bar_1.ClipsDescendants = true
 
 				UICorner_2.Parent = Bar_1
@@ -2201,7 +2246,7 @@ function Env:Window(meta)
 
 				UICorner_4.Parent = ValueBox_1
 				UICorner_4.CornerRadius = UDim.new(1,0)
-				
+
 				local function roundToDecimal(value, decimals)
 					local factor = 10 ^ decimals
 					return math.floor(value * factor + 0.5) / factor
@@ -2296,7 +2341,7 @@ function Env:Window(meta)
 				local Value = info.Value
 				local Multi = info.Multi or false
 				local Callback = info.Callback
-				
+
 				local Dropdownz = Instance.new("Frame")
 				local UICorner_1 = Instance.new("UICorner")
 				local ImageLabel_1 = Instance.new("ImageLabel")
@@ -2389,7 +2434,7 @@ function Env:Window(meta)
 
 				UIGradient_3.Parent = icon_1
 				UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 127)), ColorSequenceKeypoint.new(0.482699, Color3.fromRGB(0, 170, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(85, 85, 255))}
-				
+
 
 				local Dropdown = Instance.new("Frame")
 				local UICorner_1 = Instance.new("UICorner")
@@ -2544,7 +2589,7 @@ function Env:Window(meta)
 				UIListLayout_2.Parent = ScrollingFrame_1
 				UIListLayout_2.Padding = UDim.new(0,5)
 				UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
-				
+
 				local isOpen = false
 				UserInputService.InputBegan:Connect(function(A)
 					if A.UserInputType == Enum.UserInputType.MouseButton1 or A.UserInputType == Enum.UserInputType.Touch then
@@ -2561,7 +2606,7 @@ function Env:Window(meta)
 						end
 					end
 				end)
-				
+
 				ClickDropdown.MouseButton1Click:Connect(function()
 					isOpen = not isOpen
 					if isOpen then
@@ -2601,7 +2646,7 @@ function Env:Window(meta)
 					end)
 					EffectClick2(ClickDropdown, Dropdown)
 				end)
-				
+
 				Search_1.Changed:Connect(function()
 					local SearchT = string.lower(Search_1.Text)
 					for i, v in pairs(ScrollingFrame_1:GetChildren()) do
@@ -2615,8 +2660,8 @@ function Env:Window(meta)
 						end
 					end
 				end)
-				
-				
+
+
 				local itemslist = {}
 				local selectedItem
 
@@ -2656,9 +2701,9 @@ function Env:Window(meta)
 						Desc_1.Text = ""
 					end
 				end
-				
+
 				local selectedValues = {}
-				
+
 				function itemslist:AddList(text)
 					local Items = Instance.new("Frame")
 					local UIGradient_1 = Instance.new("UIGradient")
@@ -2722,7 +2767,7 @@ function Env:Window(meta)
 
 					UICorner_1.Parent = Line_1
 					UICorner_1.CornerRadius = UDim.new(1,0)
-					
+
 					ClickList.MouseButton1Click:Connect(function()
 						if Multi then
 							if selectedValues[text] then
@@ -2884,7 +2929,7 @@ function Env:Window(meta)
 						end
 					end)
 				end
-				
+
 				for i,v in ipairs(List) do
 					itemslist:AddList(v, i)
 				end
@@ -2901,7 +2946,7 @@ function Env:Window(meta)
 				local Key = info.Key or Enum.KeyCode.Q
 				local Value = info.Value or false
 				local Callback = info.Callback or function() end
-				
+
 				local Keybind = Instance.new("Frame")
 				local UICorner_1 = Instance.new("UICorner")
 				local ImageLabel_1 = Instance.new("ImageLabel")
@@ -2986,7 +3031,7 @@ function Env:Window(meta)
 				TextLabel_1.Text = tostring(Value)
 				TextLabel_1.TextColor3 = Color3.fromRGB(255,255,255)
 				TextLabel_1.TextSize = 13
-				
+
 				local function adjustBoxBindSize()
 					local textSize = game:GetService("TextService"):GetTextSize(TextLabel_1.Text, TextLabel_1.TextSize, TextLabel_1.Font, Vector2.new(1000, 1000))
 					Bin_1.Size = UDim2.new(0, textSize.X + 15, 0, 25)
